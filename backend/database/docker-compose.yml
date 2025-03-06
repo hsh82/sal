@@ -1,0 +1,25 @@
+services:
+  saldatabase :
+    image : postgres:13
+    ports : 
+      - "5432:5432"
+    environment : 
+      POSTGRES_USER : salDatabase
+      POSTGRES_PASSWORD : salpassword
+      POSTGRES_DB : Nest 
+    networks:
+      - salnet
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    
+volumes:
+  postgres_data:
+    
+
+networks:
+  salnet :
+
+    
+
+    
+  

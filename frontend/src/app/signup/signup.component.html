@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+    
+
+<div class="bg">
+    
+    <div class="container">
+        
+        <div class="texts" >
+
+            <div class="child">
+            <H1 style="margin: 0;">Sign Up</H1>
+            </div>
+            <div class="child">
+                <h4>Hello! {{userTemp.username}}</h4>
+            </div>
+            <div class="child">
+                <p style="letter-spacing: 4.5px;">Email :</p>
+                <input #Email type="email" placeholder="Please Insert your email" >
+            </div>
+            <div class="child">
+                <p>Username :</p>
+                <input #Username placeholder="Please Insert your Username" >
+            </div>
+            <div class="child">
+                <p>Password :</p>
+                <input #Password type="password" placeholder="Please Insert your Password" (keyup.enter)="userMake(Email.value,Username.value,Password.value)">
+                
+            </div>
+            <div class="child">
+                <button class="btn"  type="submit" (click)="userMake(Email.value,Username.value,Password.value)">Sign Up</button>
+            </div>
+            <div>
+                <h4 >{{responesmassege}}</h4>
+            </div>
+            <div>
+                <a href="/login" ><strong> Log In </strong></a>
+            </div>
+        </div>
+        <div class="texts">
+            <img src="login-shape.png" alt="" height="420px">
+        </div>
+    </div>
+</div>
+
+    

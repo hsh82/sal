@@ -1,0 +1,64 @@
+<router-outlet>
+<div class="bg" style="background-repeat: no-repeat; 
+background-size: cover;
+background-attachment: fixed;">
+<div class="main" >
+
+  <div class="flex-container">
+
+  <div class ="flex-child login">
+    <div class="=flex-container2">
+
+      <div class ="flex-child2">
+    <h1>{{ componentTitle }}</h1>
+      </div>
+
+      <div class ="flex-child2">
+    <h2>Hello<strong>,{{userTemp.username}}</strong></h2>
+    </div>
+
+    <div class ="flex-child2">
+  <input
+  #Username
+  placeholder="User name"
+  class="lg-text-input"
+  id="addItemInput" />
+  </div>
+
+  <div class ="flex-child2" >
+  <input
+  type="password"
+  #Password
+  placeholder="Password"
+  (keyup.enter)="onSubmit(Username.value,Password.value)"
+  class="lg-text-input"
+  id="addItemInput" />
+</div>
+
+<div class ="flex-child2">
+  <button class="btn-primary" (click)="onSubmit(Username.value,Password.value)">Log In</button>
+</div>
+<div class ="flex-child2">
+
+@if ((""=== userTemp.username || "" === userTemp.password)){<p>Please Enter your User & Password</p> }  
+@if (!("" === userTemp.username || "" === userTemp.password)){<h4 >{{responesmassege}}</h4>}
+
+<a href="/signup">Dont have an account ? <strong> sign up </strong></a>
+
+
+</div>
+</div>  
+</div>
+  <div class="flex-child pic"  > <img src="3d-hand-holding-smartphone-displaying-verified-badge-icon-png.png"   />
+    
+  </div>
+</div>
+</div>
+   </div>
+
+</router-outlet>
+
+
+
+
+

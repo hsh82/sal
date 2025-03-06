@@ -1,0 +1,61 @@
+services:
+  
+  saldatabase :
+    image : postgres:13
+    ports : 
+      - "5432:5432"
+    environment : 
+      POSTGRES_USER : salDatabase
+      POSTGRES_PASSWORD : salpassword
+      POSTGRES_DB : Nest 
+    networks:
+      - salnet
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    
+
+
+
+  salbackend:
+      build:
+        context: ../backend
+        dockerfile: Dockerfile
+      container_name: backend
+      ports:
+        - "3000:3000"
+      depends_on:
+        - saldatabase
+      networks:
+      - salnet
+      command: npm run prisma:dev:deploy 
+
+
+
+  
+
+    
+  salfrontend:
+      build:
+        context: ../frontend
+        dockerfile: Dockerfile
+      container_name: frontend
+      ports:
+        - "4200:4000"
+      networks:
+      - salnet
+      volumes :
+      - ../frontend:/app  # mount کردن کد منبع برای توسعه
+      - /app/node_modules 
+      # depends_on:
+      #   - salbackend
+      
+
+    
+
+    
+volumes:
+  postgres_data:
+    
+
+networks:
+  salnet :

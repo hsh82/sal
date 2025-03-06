@@ -1,0 +1,49 @@
+<router-outlet></router-outlet>
+
+<div class="bg">
+    
+    <div class="container">
+        
+        <div class="texts" >
+
+            <div class="child">
+            <H1 >Dashboard</H1>
+            </div>
+            <div class="child" style="align-items: center;">
+                <h3 style="padding-right: 5px;">Username :  </h3><h2>{{userData.username}}</h2>
+            </div>
+            <div class="child" style="align-items: center;">
+                <h3 style="padding-right: 5px;">Email :  </h3><h2>{{userData.email}}</h2>
+            </div>
+            <div class="child" style="align-items: center;">
+                <h3 style="padding-right: 5px;">Creacted at :  </h3><h2>{{userData.creactedAt}}</h2>
+            </div>
+            <div class="child">
+                <ng-template #loading>
+                    <p>Loading user data...</p>
+                  </ng-template>
+                <button class="btn" type="submit" (click)="userout()">Log out</button>
+            </div>
+
+        </div>
+        <!-- <div class="texts">
+            <img src="login-shape.png" alt="" height="420px">
+        </div> -->
+    </div>
+</div>
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+

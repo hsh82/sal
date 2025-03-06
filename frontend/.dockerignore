@@ -1,0 +1,30 @@
+# # پوشه node_modules
+# node_modules/
+
+# # پوشه dist
+# dist/
+
+# # فایل‌های لاگ
+# *.log
+
+# # فایل‌های محیطی
+# .env
+# .env.local
+# .env.development
+# .env.production
+
+# # فایل‌های IDE/Editor
+# .idea/
+# .vscode/
+
+# # فایل‌های Git
+# .git/
+# .gitignore
+
+# # فایل‌های Docker
+# Dockerfile
+# docker-compose.yml
+
+# # فایل‌های موقت
+# tmp/
+# temp/
